@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sabores de Brasil – 37 Recetas Brasileñas para Ver la Copa</title>
+  <meta name="description" content="Prepara una mesa brasileña fácil, deliciosa y perfecta para compartir durante los partidos. 37 recetas + 2 bonos especiales. Acceso digital inmediato por solo US$ 7." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --urgency: #EE6352;
+      --hero-bg: #3A1B09;
+      --light-1: #F6DFB9;
+      --light-2: #FDF6F7;
+      --card-warm: #F6F0DA;
+      --btn-green: #39B574;
+      --btn-green-dark: #2a9060;
+      --yellow: #F1C40F;
+      --red: #FF2C2C;
+      --dark: #202020;
+      --white: #FFFFFF;
+      --beige-section: #E6DCCB;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ─────────────────────────────────────────
+       URGENCY BAR (with mini countdown + CTA)
+    ───────────────────────────────────────── */
+    .urgency-bar {
+      background: var(--urgency);
+      color: #fff;
+      text-align: center;
+      padding: 9px 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .urgency-bar-text {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .urgency-bar-timer {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(0,0,0,0.18);
+      border-radius: 100px;
+      padding: 3px 10px;
+      font-size: 13px;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.03em;
+    }
+
+    .urgency-bar-timer span.sep {
+      opacity: 0.7;
+    }
+
+    .urgency-bar-cta {
+      background: #fff;
+      color: var(--urgency);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 5px 14px;
+      border-radius: 100px;
+      transition: background 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+
+    .urgency-bar-cta:hover {
+      background: #fff0ee;
+      transform: scale(1.04);
+    }
+
+    /* ─────────────────────────────────────────
+       HERO — fundo branco
+    ───────────────────────────────────────── */
+    .hero {
+      background: #fff;
+      color: var(--dark);
+      padding: 48px 20px 56px;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--hero-bg);
+      color: #e7b66f;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      padding: 6px 18px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 6vw, 54px);
+      font-weight: 700;
+      line-height: 1.15;
+      max-width: 720px;
+      margin: 0 auto 28px;
+      color: var(--hero-bg);
+    }
+
+    .hero-image-wrap {
+      max-width: 820px;
+      margin: 0 auto 32px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 32px rgba(58,27,9,0.12);
+    }
+
+    .hero-image-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-sub {
+      font-size: clamp(15px, 2.2vw, 18px);
+      line-height: 1.7;
+      max-width: 640px;
+      margin: 0 auto 28px;
+      color: #555;
+    }
+
+    .hero-benefits {
+      list-style: none;
+      max-width: 520px;
+      margin: 0 auto 32px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .hero-benefits li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .hero-benefits li::before {
+      content: "✓";
+      background: var(--btn-green);
+      color: #fff;
+      font-weight: 900;
+      font-size: 10px;
+      min-width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .hero-microcopy {
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 12px;
+    }
+
+    /* ─────────────────────────────────────────
+       BUTTONS
+    ───────────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      background: var(--btn-green);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-decoration: none;
+      padding: 17px 32px;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s cubic-bezier(0.25,0.46,0.45,0.94), background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 6px 22px rgba(57,181,116,0.32);
+      text-transform: uppercase;
+    }
+
+    .btn:hover {
+      transform: scale(1.04) translateY(-2px);
+      background: var(--btn-green-dark);
+      box-shadow: 0 10px 30px rgba(57,181,116,0.42);
+    }
+
+    .btn-white-red {
+      background: #fff;
+      color: var(--urgency);
+    }
+
+    .btn-white-red:hover {
+      background: #fff3f1;
+      box-shadow: 0 6px 22px rgba(238,99,82,0.3);
+    }
+
+    /* ─────────────────────────────────────────
+       SECTION WRAPPER
+    ───────────────────────────────────────── */
+    .section { padding: 60px 20px; }
+    .section-inner { max-width: 880px; margin: 0 auto; }
+
+    /* ─────────────────────────────────────────
+       SECTION TITLES
+    ───────────────────────────────────────── */
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 4.5vw, 38px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .section-sub {
+      font-size: 15px;
+      color: #666;
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto 40px;
+      line-height: 1.65;
+    }
+
+    /* ─────────────────────────────────────────
+       ABERTURA EMOCIONAL
+    ───────────────────────────────────────── */
+    .emotional { background: var(--light-1); }
+
+    .emotional .section-title {
+      color: var(--dark);
+      font-size: clamp(18px, 3vw, 26px);
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .emotional .headline-sec {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 6vw, 52px);
+      font-weight: 700;
+      color: var(--hero-bg);
+      margin-bottom: 22px;
+      text-align: center;
+    }
+
+    .emotional p {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #4a3520;
+      max-width: 660px;
+      margin: 0 auto 14px;
+      text-align: center;
+    }
+
+    /* ─────────────────────────────────────────
+       PROVA VISUAL
+    ───────────────────────────────────────── */
+    .product-visual { background: var(--light-2); }
+
+    .reinforce-phrase {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--hero-bg);
+      text-align: center;
+      max-width: 600px;
+      margin: 28px auto 0;
+      line-height: 1.6;
+    }
+
+    .product-mockup {
+      max-width: 780px;
+      margin: 0 auto;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 6px 36px rgba(0,0,0,0.1);
+    }
+
+    .product-mockup img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ─────────────────────────────────────────
+       CARDS GRID (4 características)
+    ───────────────────────────────────────── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    @media (max-width: 480px) {
+      .cards-grid { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: var(--card-warm);
+      border-radius: 16px;
+      padding: 24px 20px;
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .card-icon { font-size: 26px; margin-bottom: 10px; }
+
+    .card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 7px;
+      color: var(--hero-bg);
+    }
+
+    .card p {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    .caracteristicas { background: var(--beige-section); text-align: center; }
+
+    /* ─────────────────────────────────────────
+       BENEFICIO CENTRAL
+    ───────────────────────────────────────── */
+    .beneficio-central { background: var(--light-2); }
+
+    .benefit-card {
+      background: var(--card-warm);
+      border-radius: 18px;
+      padding: 32px 28px;
+      max-width: 620px;
+      margin: 0 auto 32px;
+    }
+
+    .benefit-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .benefit-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      font-size: 14px;
+      color: var(--dark);
+      line-height: 1.55;
+    }
+
+    .benefit-list li::before {
+      content: "✓";
+      background: var(--btn-green);
+      color: #fff;
+      font-weight: 900;
+      font-size: 10px;
+      min-width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* ─────────────────────────────────────────
+       URGENCY BLOCK (com countdown + CTA)
+    ───────────────────────────────────────── */
+    .urgency-block {
+      background: var(--urgency);
+      color: #fff;
+      text-align: center;
+    }
+
+    .urgency-block .section-title {
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .urgency-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.88);
+      max-width: 500px;
+      margin: 0 auto 28px;
+      line-height: 1.65;
+    }
+
+    /* Countdown */
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .countdown-item {
+      background: rgba(0,0,0,0.18);
+      border-radius: 12px;
+      padding: 14px 18px;
+      min-width: 74px;
+      text-align: center;
+    }
+
+    .countdown-item .num {
+      font-size: 34px;
+      font-weight: 900;
+      color: #fff;
+      display: block;
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+    }
+
+    .countdown-item .label {
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-top: 5px;
+      display: block;
+    }
+
+    /* ─────────────────────────────────────────
+       PARA QUIÉN ES (6 cards)
+    ───────────────────────────────────────── */
+    .para-quien { background: var(--light-2); }
+
+    .cards-6 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .cards-6 { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 360px) {
+      .cards-6 { grid-template-columns: 1fr; }
+    }
+
+    .card-quien {
+      background: #fff;
+      border-radius: 14px;
+      padding: 20px 16px;
+      border: 1px solid rgba(0,0,0,0.07);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card-quien:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .card-quien h3 {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: var(--hero-bg);
+      line-height: 1.4;
+    }
+
+    .card-quien p {
+      font-size: 12px;
+      color: #777;
+      line-height: 1.55;
+    }
+
+    /* ─────────────────────────────────────────
+       TODO LO QUE VA A RECIBIR
+    ───────────────────────────────────────── */
+    .todo-recibir { background: #FFFFF7; }
+
+    .main-product-card {
+      background: var(--hero-bg);
+      border-radius: 22px;
+      padding: 36px 30px;
+      color: #fff;
+      max-width: 660px;
+      margin: 0 auto;
+    }
+
+    .instant-badge {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--dark);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      padding: 5px 13px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .main-product-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(18px, 3vw, 24px);
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .main-product-card > p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 18px;
+      line-height: 1.65;
+    }
+
+    .product-includes {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .product-includes li {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .product-includes li::before {
+      content: "✓";
+      background: var(--btn-green);
+      color: #fff;
+      font-weight: 900;
+      font-size: 9px;
+      min-width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ─────────────────────────────────────────
+       BONOS
+    ───────────────────────────────────────── */
+    .bonos-section { background: #FFFFF7; padding-top: 0; }
+
+    .transition-title {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 10px;
+    }
+
+    .bonus-badge {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      padding: 5px 16px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    .bonos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 560px) {
+      .bonos-grid { grid-template-columns: 1fr; }
+    }
+
+    .bono-card {
+      border-radius: 20px;
+      padding: 28px 24px;
+      border: 2px solid #e8e8e8;
+      background: #fff;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .bono-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.08);
+    }
+
+    /* Bono image */
+    .bono-img {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+
+    .bono-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .bono-num {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      background: var(--hero-bg);
+      color: #e7b66f;
+      padding: 4px 11px;
+      border-radius: 100px;
+      margin-bottom: 13px;
+      text-transform: uppercase;
+    }
+
+    .bono-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--hero-bg);
+      margin-bottom: 9px;
+    }
+
+    .bono-card > p {
+      font-size: 13px;
+      color: #777;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .bono-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 15px;
+    }
+
+    .bono-items li {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      font-size: 12px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .bono-items li::before {
+      content: "→";
+      color: var(--btn-green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .bono-value {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--btn-green);
+    }
+
+    /* ─────────────────────────────────────────
+       OFERTA
+    ───────────────────────────────────────── */
+    .oferta-section { background: var(--light-2); text-align: center; }
+
+    .urgency-offer-badge {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      padding: 5px 16px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .price-card {
+      background: var(--hero-bg);
+      border-radius: 24px;
+      padding: 36px 30px;
+      max-width: 500px;
+      margin: 0 auto 24px;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price-card::before {
+      content: "";
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 160px; height: 160px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 50%;
+    }
+
+    .price-complete-badge {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--dark);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    .includes-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-bottom: 24px;
+      text-align: left;
+    }
+
+    .includes-list li {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .includes-list li::before {
+      content: "✓";
+      background: var(--btn-green);
+      color: #fff;
+      font-weight: 900;
+      font-size: 9px;
+      min-width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .price-from {
+      font-size: 15px;
+      text-decoration: line-through;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 4px;
+    }
+
+    .price-by {
+      font-size: 50px;
+      font-weight: 900;
+      color: var(--yellow);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .price-by span {
+      font-size: 20px;
+      font-weight: 700;
+      vertical-align: top;
+      line-height: 2;
+    }
+
+    .reinforce-offer {
+      font-size: 14px;
+      color: #777;
+      font-style: italic;
+      max-width: 460px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* ─────────────────────────────────────────
+       GARANTIA
+    ───────────────────────────────────────── */
+    .garantia-section { background: #F8FDFF; text-align: center; }
+
+    .guarantee-seal { font-size: 64px; margin-bottom: 18px; }
+
+    .garantia-section .section-title { color: var(--dark); margin-bottom: 14px; }
+
+    .garantia-section p {
+      font-size: 15px;
+      color: #666;
+      max-width: 540px;
+      margin: 0 auto 10px;
+      line-height: 1.75;
+    }
+
+    .garantia-highlight {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--btn-green);
+    }
+
+    /* ─────────────────────────────────────────
+       COMO FUNCIONA
+    ───────────────────────────────────────── */
+    .como-funciona { background: #fff; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    @media (max-width: 700px) {
+      .steps { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 400px) {
+      .steps { grid-template-columns: 1fr; }
+    }
+
+    .step {
+      text-align: center;
+      padding: 24px 16px;
+      background: #fafafa;
+      border-radius: 16px;
+      border: 1px solid #eee;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .step:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+    }
+
+    .step-num {
+      width: 40px; height: 40px;
+      background: var(--btn-green);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 900;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+    }
+
+    .step h3 { font-size: 14px; font-weight: 700; margin-bottom: 7px; color: var(--dark); }
+    .step p  { font-size: 12px; color: #888; line-height: 1.6; }
+
+    /* ─────────────────────────────────────────
+       FAQ
+    ───────────────────────────────────────── */
+    .faq-section { background: #fff; }
+
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .faq-item {
+      border: 1px solid #e8e8e8;
+      border-radius: 13px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 18px 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      text-align: left;
+      transition: background 0.15s;
+    }
+
+    .faq-question:hover { background: #fafafa; }
+    .faq-question.open  { background: #fafafa; color: var(--hero-bg); }
+
+    .faq-arrow {
+      font-size: 16px;
+      transition: transform 0.25s;
+      flex-shrink: 0;
+      color: var(--btn-green);
+    }
+
+    .faq-question.open .faq-arrow { transform: rotate(180deg); }
+
+    .faq-answer {
+      display: none;
+      padding: 0 20px 16px;
+      font-size: 13px;
+      color: #666;
+      line-height: 1.75;
+    }
+
+    .faq-answer.open { display: block; }
+
+    /* ─────────────────────────────────────────
+       FECHAMENTO FINAL
+    ───────────────────────────────────────── */
+    .closing {
+      background: var(--hero-bg);
+      color: #fff;
+      text-align: center;
+      padding: 72px 20px;
+    }
+
+    .closing .section-title {
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      max-width: 700px;
+      margin: 0 auto 18px;
+    }
+
+    .closing > p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.78);
+      max-width: 580px;
+      margin: 0 auto 32px;
+      line-height: 1.75;
+    }
+
+    /* ─────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────── */
+    footer {
+      background: #000;
+      color: rgba(255,255,255,0.45);
+      padding: 24px 20px;
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.75;
+    }
+
+    /* ─────────────────────────────────────────
+       UTILITY
+    ───────────────────────────────────────── */
+    .text-center { text-align: center; }
+
+    /* ─────────────────────────────────────────
+       MOBILE — global extras
+    ───────────────────────────────────────── */
+    @media (max-width: 480px) {
+      .section { padding: 48px 16px; }
+      .hero { padding: 36px 16px 44px; }
+
+      .hero h1 { font-size: 28px; }
+
+      .price-card { padding: 28px 20px; }
+      .main-product-card { padding: 26px 20px; }
+      .bono-card { padding: 22px 18px; }
+      .benefit-card { padding: 24px 18px; }
+
+      .countdown-item { min-width: 64px; padding: 12px 14px; }
+      .countdown-item .num { font-size: 28px; }
+
+      .urgency-bar { flex-direction: column; gap: 6px; padding: 10px 16px; }
+      .urgency-bar-text { font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── URGENCY BAR (timer + CTA) ── -->
+  <div class="urgency-bar" id="urgency-bar">
+    <span class="urgency-bar-text">⚡ Oferta especial por tiempo limitado</span>
+    <div class="urgency-bar-timer">
+      <span id="bar-mins">20</span><span class="sep">:</span><span id="bar-secs">00</span>
+    </div>
+    <a href="#oferta" class="urgency-bar-cta">Ver oferta</a>
+  </div>
+
+  <!-- ── HERO (fundo branco) ── -->
+  <section class="hero" id="hero">
+    <span class="hero-badge">SABORES DE BRASIL</span>
+    <h1>La Copa se vive mejor con sabor brasileño</h1>
+
+    <div class="hero-image-wrap">
+      <img src="imagem-principal.webp" alt="Sabores de Brasil – recetario digital con recetas brasileñas para ver la Copa" />
+    </div>
+
+    <p class="hero-sub">
+      Descubre 37 recetas brasileñas fáciles para preparar una mesa especial, compartir con amigos y familia, y disfrutar cada partido con más sabor, alegría y clima de fútbol.
+    </p>
+
+    <ul class="hero-benefits">
+      <li>37 recetas brasileñas explicadas paso a paso</li>
+      <li>Petiscos, platos, salsas, acompañamientos y dulces</li>
+      <li>Incluye guía de menús para cada tipo de partido</li>
+      <li>Incluye guía de compras para saber qué llevar del mercado</li>
+      <li>Acceso digital inmediato — celular, tablet o computadora</li>
+    </ul>
+
+    <a href="https://pay.hotmart.com/T106078353G?bid=1780348349775" class="btn" id="hero-cta">QUIERO MI RECETARIO AHORA</a>
+    <p class="hero-microcopy">Recibe todo en formato digital y empieza a preparar tu mesa brasileña hoy mismo.</p>
+  </section>
+
+  <!-- ── ABERTURA EMOCIONAL ── -->
+  <section class="section emotional" id="abertura">
+    <div class="section-inner">
+      <p class="section-title">Llega el día del partido… y siempre aparece la misma pregunta:</p>
+      <div class="headline-sec">¿Qué vamos a comer?</div>
+      <p>La televisión está encendida, la familia empieza a reunirse, los amigos preguntan dónde van a ver el juego… y usted quiere servir algo rico, diferente y fácil, sin pasar horas buscando recetas en internet.</p>
+      <p>Con Sabores de Brasil, puede transformar ese partido en una experiencia especial con comida brasileña, recetas para compartir y una mesa con verdadero clima de fútbol.</p>
+      <div class="emotional-image-wrap" style="max-width: 780px; margin: 32px auto 0; border-radius: 18px; overflow: hidden; box-shadow: 0 6px 36px rgba(0,0,0,0.12);">
+        <img src="3.webp" alt="Mesa de comida brasileña" style="width: 100%; height: auto; display: block;" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROVA VISUAL ── -->
+  <section class="section product-visual" id="producto">
+    <div class="section-inner">
+      <h2 class="section-title">Vea lo que va a recibir</h2>
+      <div class="product-mockup">
+        <img src="2.webp" alt="Páginas internas del recetario Sabores de Brasil – recetas brasileñas paso a paso" />
+      </div>
+      <p class="reinforce-phrase">Todo organizado para que usted sepa qué preparar, qué comprar y cómo montar una mesa brasileña sin complicarse.</p>
+    </div>
+  </section>
+
+  <!-- ── CARACTERÍSTICAS ── -->
+  <section class="section caracteristicas" id="caracteristicas">
+    <div class="section-inner">
+      <h2 class="section-title">Dentro de Sabores de Brasil encontrará:</h2>
+      <p class="section-sub">Recetas organizadas por categoría para que arme su mesa con facilidad.</p>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">🥟</div>
+          <h3>Petiscos para compartir</h3>
+          <p>Recetas brasileñas perfectas para comer con la mano y servir durante el partido.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🍽️</div>
+          <h3>Platos para días de partido</h3>
+          <p>Opciones más completas para recibir amigos, reunir a la familia o montar una mesa abundante.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🥗</div>
+          <h3>Salsas y acompañamientos</h3>
+          <p>Detalles simples que dejan la mesa más sabrosa, fresca y con personalidad brasileña.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🍫</div>
+          <h3>Dulces brasileños</h3>
+          <p>Clásicos como brigadeiro, beijinho, paçoca, mousse de maracuyá y pastel de zanahoria.</p>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="https://pay.hotmart.com/T106078353G?bid=1780348349775" class="btn" id="caracteristicas-cta">QUIERO ACCEDER AHORA</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BENEFICIO CENTRAL ── -->
+  <section class="section beneficio-central" id="beneficios">
+    <div class="section-inner">
+      <h2 class="section-title">Prepare una mesa brasileña sin pensar desde cero</h2>
+      <div class="benefit-card">
+        <ul class="benefit-list">
+          <li>Deje de perder tiempo buscando recetas sueltas en internet</li>
+          <li>Sepa qué recetas combinar según la ocasión</li>
+          <li>Organice sus compras antes de ir al mercado</li>
+          <li>Adapte ingredientes brasileños a opciones disponibles en LATAM</li>
+          <li>Sorprenda amigos y familia con una mesa diferente para los partidos</li>
+        </ul>
+      </div>
+      <div class="text-center">
+        <a href="https://pay.hotmart.com/T106078353G?bid=1780348349775" class="btn" id="beneficio-cta">DESCARGAR MI RECETARIO AHORA</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── URGENCY BLOCK (timer + CTA) ── -->
+  <section class="section urgency-block" id="urgencia">
+    <div class="section-inner">
+      <h2 class="section-title">¿Cuántos partidos va a ver sirviendo siempre lo mismo?</h2>
+      <p class="urgency-sub">Aproveche la oferta especial por tiempo limitado y prepare una mesa brasileña para la Copa.</p>
+
+      <div class="countdown" id="countdown">
+        <div class="countdown-item"><span class="num" id="cd-mins2">20</span><span class="label">Minutos</span></div>
+        <div class="countdown-item"><span class="num" id="cd-secs2">00</span><span class="label">Segundos</span></div>
+      </div>
+
+      <a href="https://pay.hotmart.com/T106078353G?bid=1780348349775" class="btn btn-white-red" id="urgencia-cta">QUIERO ACCEDER AHORA</a>
+    </div>
+  </section>
+
+  <!-- ── PARA QUIÉN ES ── -->
+  <section class="section para-quien" id="para-quien">
+    <div class="section-inner">
+      <h2 class="section-title">Este recetario es ideal para usted si desea:</h2>
+      <p class="section-sub">¿Se identifica con alguno de estos puntos?</p>
+      <div class="cards-6">
+        <div class="card-quien">
+          <h3>🌟 Preparar algo diferente</h3>
+          <p>Salir de la pizza, las papas y los snacks de siempre en días de partido.</p>
+        </div>
+        <div class="card-quien">
+          <h3>🏠 Recibir bien en casa</h3>
+          <p>Montar una mesa simple, bonita y sabrosa para amigos o familia.</p>
+        </div>
+        <div class="card-quien">
+          <h3>⏱️ Ahorrar tiempo</h3>
+          <p>Evitar buscar recetas sueltas y tener todo organizado en un solo lugar.</p>
+        </div>
+        <div class="card-quien">
+          <h3>🛒 Comprar con seguridad</h3>
+          <p>Saber qué ingredientes llevar del mercado y qué sustituciones usar en LATAM.</p>
+        </div>
+        <div class="card-quien">
+          <h3>⚽ Vivir la Copa con más sabor</h3>
+          <p>Crear un momento especial alrededor de la mesa durante los partidos.</p>
+        </div>
+        <div class="card-quien">
+          <h3>🇧🇷 Probar comida brasileña</h3>
+          <p>Descubrir recetas típicas de Brasil explicadas de forma simple y práctica.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TODO LO QUE VA A RECIBIR ── -->
+  <section class="section todo-recibir" id="todo">
+    <div class="section-inner">
+      <h2 class="section-title">Todo lo que va a recibir</h2>
+      <p class="section-sub">Un paquete completo pensado para que su mesa brasileña sea perfecta.</p>
+      <div class="main-product-card">
+        <span class="instant-badge">⚡ ACCESO INMEDIATO</span>
+        <h2>Sabores de Brasil: 37 recetas brasileñas para ver la Copa</h2>
+        <p>Un recetario digital completo con petiscos, platos para compartir, salsas, acompañamientos y dulces brasileños.</p>
+        <ul class="product-includes">
+          <li>37 recetas brasileñas</li>
+          <li>Recetas saladas y dulces</li>
+          <li>Modo de preparación paso a paso</li>
+          <li>Ingredientes claros</li>
+          <li>Nombres en español y en portugués</li>
+          <li>Perfecto para días de partido</li>
+          <li>Formato digital — celular, tablet o computadora</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BONOS ── -->
+  <section class="section bonos-section" id="bonos">
+    <div class="section-inner">
+      <p class="transition-title">Y ADEMÁS, RECIBE 2 BONOS ESPECIALES</p>
+      <h2 class="section-title" style="margin-bottom:10px;">Para que no solo tenga recetas, sino también sepa qué preparar y qué comprar.</h2>
+      <div class="text-center" style="margin-bottom:36px;">
+        <span class="bonus-badge">🔥 2 BONOS INCLUIDOS</span>
+      </div>
+      <div class="bonos-grid">
+
+        <!-- BONO 1 -->
+        <div class="bono-card">
+          <div class="bono-img">
+            <img src="bono 1.webp" alt="Guía de Menús para Cada Partido – Bono 1 Sabores de Brasil" />
+          </div>
+          <span class="bono-num">BONO #1</span>
+          <h3>Guía de Menús para Cada Partido</h3>
+          <p>Una guía práctica para saber qué recetas preparar según la ocasión, la cantidad de personas y el tiempo disponible.</p>
+          <ul class="bono-items">
+            <li>Menú para ver el partido en pareja</li>
+            <li>Menú familiar</li>
+            <li>Menú amigos en casa</li>
+            <li>Menú mesa completa</li>
+            <li>Menú final de Copa</li>
+            <li>Menú rápido</li>
+            <li>Menú económico</li>
+          </ul>
+          <p class="bono-value">Valor: US$ 9 — Incluido gratis hoy</p>
+        </div>
+
+        <!-- BONO 2 -->
+        <div class="bono-card">
+          <div class="bono-img">
+            <img src="bono 2.webp" alt="Guía de Compras para el Mercado – Bono 2 Sabores de Brasil" />
+          </div>
+          <span class="bono-num">BONO #2</span>
+          <h3>Guía de Compras para el Mercado</h3>
+          <p>Una guía para organizar sus compras, encontrar sustituciones para ingredientes brasileños y saber qué llevar del mercado.</p>
+          <ul class="bono-items">
+            <li>Lista base de ingredientes brasileños</li>
+            <li>Sustituciones para LATAM</li>
+            <li>Lista de compras por categoría</li>
+            <li>Compras sugeridas por cantidad de personas</li>
+            <li>Checklist final para ir al mercado</li>
+          </ul>
+          <p class="bono-value">Valor: US$ 9 — Incluido gratis hoy</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── OFERTA ── -->
+  <section class="section oferta-section" id="oferta">
+    <div class="section-inner">
+      <span class="urgency-offer-badge">⏰ OFERTA ESPECIAL POR TIEMPO LIMITADO</span>
+      <h2 class="section-title">Lleve el sabor de Brasil a su mesa durante la Copa</h2>
+      <p class="section-sub" style="margin-bottom:28px;"></p>
+
+      <div class="price-card">
+        <span class="price-complete-badge">⚡ MÁS COMPLETO</span>
+        <ul class="includes-list">
+          <li>Sabores de Brasil: 37 recetas brasileñas</li>
+          <li>Guía de Menús para Cada Partido</li>
+          <li>Guía de Compras para el Mercado</li>
+          <li>Sustituciones para LATAM</li>
+          <li>Acceso digital inmediato</li>
+          <li>Uso desde celular, tablet o computadora</li>
+        </ul>
+        <p class="price-from">US$ 27</p>
+        <div class="price-by"><span>US$</span> 7</div>
+        <a href="https://pay.hotmart.com/T106078353G?bid=1780348349775" class="btn" id="oferta-cta" style="width:100%;text-align:center;display:block;">QUIERO MI RECETARIO AHORA</a>
+      </div>
+
+      <p class="reinforce-offer">Una sola mesa especial durante la Copa ya puede hacer que este recetario valga la pena.</p>
+    </div>
+  </section>
+
+  <!-- ── GARANTIA ── -->
+  <section class="section garantia-section" id="garantia">
+    <div class="section-inner">
+      <div class="guarantee-seal">🛡️</div>
+      <h2 class="section-title">Compre con tranquilidad</h2>
+      <p>Si este recetario no le ayuda a preparar una mesa más especial para los partidos, puede solicitar su reembolso dentro del plazo de garantía de la plataforma.</p>
+      <p class="garantia-highlight">Sin complicaciones.</p>
+    </div>
+  </section>
+
+  <!-- ── COMO FUNCIONA ── -->
+  <section class="section como-funciona" id="como-funciona">
+    <div class="section-inner">
+      <h2 class="section-title">Cómo funciona el acceso</h2>
+      <p class="section-sub">Simple, rápido y sin complicaciones.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Concluya su compra</h3>
+          <p>Después del pago, el acceso se libera automáticamente.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Reciba el material</h3>
+          <p>Acceda al recetario y a los bonos desde celular, tablet o computadora.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Elija su menú</h3>
+          <p>Use la Guía de Menús para decidir qué preparar según la ocasión.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>Organice sus compras</h3>
+          <p>Use la Guía de Compras para ir al mercado con una lista clara.</p>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="https://pay.hotmart.com/T106078353G?bid=1780348349775" class="btn" id="como-funciona-cta">QUIERO MI ACCESO AHORA</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="section faq-section" id="faq">
+    <div class="section-inner">
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <p class="section-sub">Resolvemos sus dudas antes de que decida.</p>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faq-1">
+            ¿El producto es físico?
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-answer" id="faq-1-ans">No. Es un producto digital. Recibirá acceso después de la compra.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faq-2">
+            ¿Necesito saber cocinar?
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-answer" id="faq-2-ans">No. Las recetas fueron escritas con ingredientes claros y pasos simples.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faq-3">
+            ¿Puedo usar las recetas en cualquier país de LATAM?
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-answer" id="faq-3-ans">Sí. El producto está en español e incluye una guía de compras con sustituciones para ingredientes brasileños.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faq-4">
+            ¿Cómo sé qué receta preparar?
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-answer" id="faq-4-ans">El producto incluye la Guía de Menús para Cada Partido, que indica qué preparar según la ocasión, la cantidad de personas y el tiempo disponible.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faq-5">
+            ¿El producto me ayuda a hacer la compra?
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-answer" id="faq-5-ans">Sí. También recibe la Guía de Compras para el Mercado, con ingredientes por categoría, listas por tipo de menú y sustituciones para LATAM.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faq-6">
+            ¿Puedo imprimir el material?
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-answer" id="faq-6-ans">Sí. Puede imprimir las páginas que quiera o usar el PDF desde su celular, tablet o computadora.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faq-7">
+            ¿Es un producto oficial de la Copa?
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-answer" id="faq-7-ans">No. Es un recetario independiente, inspirado en el clima del fútbol y la cultura brasileña. No está afiliado, patrocinado ni autorizado por ninguna organización deportiva oficial.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FECHAMENTO FINAL ── -->
+  <section class="closing" id="fechamento">
+    <h2 class="section-title">La Copa pasa rápido. Los momentos alrededor de la mesa pueden quedarse en la memoria.</h2>
+    <p>Este año, no sirva siempre lo mismo. Prepare algo diferente, sorprenda a sus amigos, reúna a su familia y viva la emoción del fútbol con sabor brasileño.</p>
+    <a href="https://pay.hotmart.com/T106078353G?bid=1780348349775" class="btn" id="closing-cta">QUIERO MI RECETARIO AHORA</a>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer id="footer">
+    <p>Este producto es un recetario independiente. No está afiliado, patrocinado ni autorizado por ninguna organización deportiva oficial. Todos los derechos sobre la obra Sabores de Brasil son reservados. La reproducción no autorizada, total o parcial, constituye violación de derechos autorales.</p>
+  </footer>
+
+  <script>
+    // ── FAQ Accordion ──
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const isOpen = btn.classList.contains('open');
+        document.querySelectorAll('.faq-question').forEach(b => {
+          b.classList.remove('open');
+          b.setAttribute('aria-expanded', 'false');
+          b.nextElementSibling.classList.remove('open');
+        });
+        if (!isOpen) {
+          btn.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          btn.nextElementSibling.classList.add('open');
+        }
+      });
+    });
+
+    // ── Shared Countdown (20 min) ──
+    (function () {
+      const deadline = new Date(Date.now() + 20 * 60 * 1000);
+
+      function pad(n) { return String(n).padStart(2, '0'); }
+
+      function tick() {
+        const diff = Math.max(0, deadline - Date.now());
+        const m = Math.floor(diff / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        const ms = pad(m), ss = pad(s);
+
+        // Urgency bar
+        document.getElementById('bar-mins').textContent = ms;
+        document.getElementById('bar-secs').textContent = ss;
+
+        // Urgency section (only minutes + seconds)
+        document.getElementById('cd-mins2').textContent = ms;
+        document.getElementById('cd-secs2').textContent = ss;
+
+        if (diff > 0) setTimeout(tick, 1000);
+      }
+
+      tick();
+    })();
+  </script>
+</body>
+</html>
