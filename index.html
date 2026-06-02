@@ -5,9 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sabores de Brasil – 37 Recetas Brasileñas para Ver la Copa</title>
   <meta name="description" content="Prepara una mesa brasileña fácil, deliciosa y perfecta para compartir durante los partidos. 37 recetas + 2 bonos especiales. Acceso digital inmediato por solo US$ 7." />
+  <!-- Preload hero image for faster LCP -->
+  <link rel="preload" as="image" href="imagem-principal.webp" fetchpriority="high" />
+
+  <!-- Google Fonts — non-blocking -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" /></noscript>
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sabores de Brasil – 37 Recetas Brasileñas para Ver la Copa" />
+  <meta property="og:description" content="Prepara una mesa brasileña fácil, deliciosa y perfecta para compartir durante los partidos. 37 recetas + 2 bonos especiales. Acceso digital inmediato por solo US$ 7." />
+  <meta property="og:image" content="https://sabores-de-brasil.vercel.app/imagem-principal.webp" />
+  <meta property="og:url" content="https://sabores-de-brasil.vercel.app/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sabores de Brasil – 37 Recetas Brasileñas para Ver la Copa" />
+  <meta name="twitter:description" content="Prepara una mesa brasileña fácil, deliciosa y perfecta para compartir durante los partidos." />
+  <meta name="twitter:image" content="https://sabores-de-brasil.vercel.app/imagem-principal.webp" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1032,7 +1048,7 @@
     <h1>La Copa se vive mejor con sabor brasileño</h1>
 
     <div class="hero-image-wrap">
-      <img src="imagem-principal.webp" alt="Sabores de Brasil – recetario digital con recetas brasileñas para ver la Copa" />
+      <img src="imagem-principal.webp" alt="Sabores de Brasil – recetario digital con recetas brasileñas para ver la Copa" width="820" height="520" fetchpriority="high" />
     </div>
 
     <p class="hero-sub">
@@ -1059,7 +1075,7 @@
       <p>La televisión está encendida, la familia empieza a reunirse, los amigos preguntan dónde van a ver el juego… y usted quiere servir algo rico, diferente y fácil, sin pasar horas buscando recetas en internet.</p>
       <p>Con Sabores de Brasil, puede transformar ese partido en una experiencia especial con comida brasileña, recetas para compartir y una mesa con verdadero clima de fútbol.</p>
       <div class="emotional-image-wrap" style="max-width: 780px; margin: 32px auto 0; border-radius: 18px; overflow: hidden; box-shadow: 0 6px 36px rgba(0,0,0,0.12);">
-        <img src="3.webp" alt="Mesa de comida brasileña" style="width: 100%; height: auto; display: block;" />
+        <img src="3.webp" alt="Mesa de comida brasileña" style="width: 100%; height: auto; display: block;" width="780" height="500" loading="lazy" />
       </div>
     </div>
   </section>
@@ -1069,7 +1085,7 @@
     <div class="section-inner">
       <h2 class="section-title">Vea lo que va a recibir</h2>
       <div class="product-mockup">
-        <img src="2.webp" alt="Páginas internas del recetario Sabores de Brasil – recetas brasileñas paso a paso" />
+        <img src="2.webp" alt="Páginas internas del recetario Sabores de Brasil – recetas brasileñas paso a paso" width="780" height="500" loading="lazy" />
       </div>
       <p class="reinforce-phrase">Todo organizado para que usted sepa qué preparar, qué comprar y cómo montar una mesa brasileña sin complicarse.</p>
     </div>
@@ -1211,7 +1227,7 @@
         <!-- BONO 1 -->
         <div class="bono-card">
           <div class="bono-img">
-            <img src="bono 1.webp" alt="Guía de Menús para Cada Partido – Bono 1 Sabores de Brasil" />
+            <img src="bono 1.webp" alt="Guía de Menús para Cada Partido – Bono 1 Sabores de Brasil" width="600" height="400" loading="lazy" />
           </div>
           <span class="bono-num">BONO #1</span>
           <h3>Guía de Menús para Cada Partido</h3>
@@ -1231,7 +1247,7 @@
         <!-- BONO 2 -->
         <div class="bono-card">
           <div class="bono-img">
-            <img src="bono 2.webp" alt="Guía de Compras para el Mercado – Bono 2 Sabores de Brasil" />
+            <img src="bono 2.webp" alt="Guía de Compras para el Mercado – Bono 2 Sabores de Brasil" width="600" height="400" loading="lazy" />
           </div>
           <span class="bono-num">BONO #2</span>
           <h3>Guía de Compras para el Mercado</h3>
