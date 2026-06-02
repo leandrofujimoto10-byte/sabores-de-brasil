@@ -24,6 +24,24 @@
   <meta name="twitter:title" content="Sabores de Brasil – 37 Recetas Brasileñas para Ver la Copa" />
   <meta name="twitter:description" content="Prepara una mesa brasileña fácil, deliciosa y perfecta para compartir durante los partidos." />
   <meta name="twitter:image" content="https://sabores-de-brasil.vercel.app/imagem-principal.webp" />
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1713439079647408');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1713439079647408&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1457,6 +1475,26 @@
 
       tick();
     })();
+
+    // ── ViewContent — dispara ao carregar a LP ──
+    fbq('track', 'ViewContent', {
+      content_name: 'Sabores de Brasil LP',
+      content_category: 'Recetario Digital',
+      currency: 'USD',
+      value: 9.00
+    });
+
+    // ── InitiateCheckout — dispara ao clicar em qualquer CTA ──
+    document.querySelectorAll('a[href*="hotmart.com"]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        fbq('track', 'InitiateCheckout', {
+          content_name: 'Sabores de Brasil',
+          currency: 'USD',
+          value: 9.00,
+          num_items: 1
+        });
+      });
+    });
   </script>
 </body>
 </html>
