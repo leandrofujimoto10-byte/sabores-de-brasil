@@ -8,8 +8,10 @@
   <!-- Preload hero image for faster LCP -->
   <link rel="preload" as="image" href="imagem-principal.webp" fetchpriority="high" />
 
+  <!-- Favicon — bandeira do Brasil em SVG puro -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='8' fill='%23009c3b'/><polygon points='50,12 92,50 50,88 8,50' fill='%23ffdf00'/><circle cx='50' cy='50' r='20' fill='%23002776'/></svg>" />
+
   <!-- Google Fonts — non-blocking -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇧🇷</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://connect.facebook.net" crossorigin />
@@ -555,7 +557,7 @@
       padding: 36px 30px;
       color: #fff;
       max-width: 660px;
-      margin: 0 auto;
+      margin: 0 auto 32px;
     }
 
     .instant-badge {
@@ -741,6 +743,56 @@
     }
 
     /* ─────────────────────────────────────────
+       COMO FUNCIONA
+    ───────────────────────────────────────── */
+    .como-funciona { background: #fff; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    @media (max-width: 700px) {
+      .steps { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 400px) {
+      .steps { grid-template-columns: 1fr; }
+    }
+
+    .step {
+      text-align: center;
+      padding: 24px 16px;
+      background: #fafafa;
+      border-radius: 16px;
+      border: 1px solid #eee;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .step:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+    }
+
+    .step-num {
+      width: 40px; height: 40px;
+      background: var(--btn-green);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 900;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+    }
+
+    .step h3 { font-size: 14px; font-weight: 700; margin-bottom: 7px; color: var(--dark); }
+    .step p  { font-size: 12px; color: #888; line-height: 1.6; }
+
+    /* ─────────────────────────────────────────
        OFERTA
     ───────────────────────────────────────── */
     .oferta-section { background: var(--light-2); text-align: center; }
@@ -877,56 +929,6 @@
       font-weight: 700;
       color: var(--btn-green);
     }
-
-    /* ─────────────────────────────────────────
-       COMO FUNCIONA
-    ───────────────────────────────────────── */
-    .como-funciona { background: #fff; }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-bottom: 36px;
-    }
-
-    @media (max-width: 700px) {
-      .steps { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 400px) {
-      .steps { grid-template-columns: 1fr; }
-    }
-
-    .step {
-      text-align: center;
-      padding: 24px 16px;
-      background: #fafafa;
-      border-radius: 16px;
-      border: 1px solid #eee;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .step:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.07);
-    }
-
-    .step-num {
-      width: 40px; height: 40px;
-      background: var(--btn-green);
-      color: #fff;
-      font-size: 16px;
-      font-weight: 900;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 14px;
-    }
-
-    .step h3 { font-size: 14px; font-weight: 700; margin-bottom: 7px; color: var(--dark); }
-    .step p  { font-size: 12px; color: #888; line-height: 1.6; }
 
     /* ─────────────────────────────────────────
        FAQ
@@ -1100,6 +1102,40 @@
     </div>
   </section>
 
+  <!-- ── PARA QUIÉN ES ── -->
+  <section class="section para-quien" id="para-quien">
+    <div class="section-inner">
+      <h2 class="section-title">Este recetario es ideal para usted si desea:</h2>
+      <p class="section-sub">¿Se identifica con alguno de estos puntos?</p>
+      <div class="cards-6">
+        <div class="card-quien">
+          <h3>🌟 Preparar algo diferente</h3>
+          <p>Salir de la pizza, las papas y los snacks de siempre en días de partido.</p>
+        </div>
+        <div class="card-quien">
+          <h3>🏠 Recibir bien en casa</h3>
+          <p>Montar una mesa simple, bonita y sabrosa para amigos o familia.</p>
+        </div>
+        <div class="card-quien">
+          <h3>⏱️ Ahorrar tiempo</h3>
+          <p>Evitar buscar recetas sueltas y tener todo organizado en un solo lugar.</p>
+        </div>
+        <div class="card-quien">
+          <h3>🛒 Comprar con seguridad</h3>
+          <p>Saber qué ingredientes llevar del mercado y qué sustituciones usar en LATAM.</p>
+        </div>
+        <div class="card-quien">
+          <h3>⚽ Vivir la Copa con más sabor</h3>
+          <p>Crear un momento especial alrededor de la mesa durante los partidos.</p>
+        </div>
+        <div class="card-quien">
+          <h3>🇧🇷 Probar comida brasileña</h3>
+          <p>Descubrir recetas típicas de Brasil explicadas de forma simple y práctica.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── PROVA VISUAL ── -->
   <section class="section product-visual" id="producto">
     <div class="section-inner">
@@ -1163,55 +1199,6 @@
     </div>
   </section>
 
-  <!-- ── URGENCY BLOCK (timer + CTA) ── -->
-  <section class="section urgency-block" id="urgencia">
-    <div class="section-inner">
-      <h2 class="section-title">¿Cuántos partidos va a ver sirviendo siempre lo mismo?</h2>
-      <p class="urgency-sub">Aproveche la oferta especial por tiempo limitado y prepare una mesa brasileña para la Copa.</p>
-
-      <div class="countdown" id="countdown">
-        <div class="countdown-item"><span class="num" id="cd-mins2">20</span><span class="label">Minutos</span></div>
-        <div class="countdown-item"><span class="num" id="cd-secs2">00</span><span class="label">Segundos</span></div>
-      </div>
-
-      <a href="https://pay.hotmart.com/T106078353G?checkoutMode=10" class="btn btn-white-red" id="urgencia-cta">QUIERO ACCEDER AHORA</a>
-    </div>
-  </section>
-
-  <!-- ── PARA QUIÉN ES ── -->
-  <section class="section para-quien" id="para-quien">
-    <div class="section-inner">
-      <h2 class="section-title">Este recetario es ideal para usted si desea:</h2>
-      <p class="section-sub">¿Se identifica con alguno de estos puntos?</p>
-      <div class="cards-6">
-        <div class="card-quien">
-          <h3>🌟 Preparar algo diferente</h3>
-          <p>Salir de la pizza, las papas y los snacks de siempre en días de partido.</p>
-        </div>
-        <div class="card-quien">
-          <h3>🏠 Recibir bien en casa</h3>
-          <p>Montar una mesa simple, bonita y sabrosa para amigos o familia.</p>
-        </div>
-        <div class="card-quien">
-          <h3>⏱️ Ahorrar tiempo</h3>
-          <p>Evitar buscar recetas sueltas y tener todo organizado en un solo lugar.</p>
-        </div>
-        <div class="card-quien">
-          <h3>🛒 Comprar con seguridad</h3>
-          <p>Saber qué ingredientes llevar del mercado y qué sustituciones usar en LATAM.</p>
-        </div>
-        <div class="card-quien">
-          <h3>⚽ Vivir la Copa con más sabor</h3>
-          <p>Crear un momento especial alrededor de la mesa durante los partidos.</p>
-        </div>
-        <div class="card-quien">
-          <h3>🇧🇷 Probar comida brasileña</h3>
-          <p>Descubrir recetas típicas de Brasil explicadas de forma simple y práctica.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ── TODO LO QUE VA A RECIBIR ── -->
   <section class="section todo-recibir" id="todo">
     <div class="section-inner">
@@ -1230,6 +1217,9 @@
           <li>Perfecto para días de partido</li>
           <li>Formato digital — celular, tablet o computadora</li>
         </ul>
+      </div>
+      <div class="text-center">
+        <a href="https://pay.hotmart.com/T106078353G?checkoutMode=10" class="btn" id="todo-cta">QUIERO MI RECETARIO AHORA</a>
       </div>
     </div>
   </section>
@@ -1286,42 +1276,6 @@
     </div>
   </section>
 
-  <!-- ── OFERTA ── -->
-  <section class="section oferta-section" id="oferta">
-    <div class="section-inner">
-      <span class="urgency-offer-badge">⏰ OFERTA ESPECIAL POR TIEMPO LIMITADO</span>
-      <h2 class="section-title">Lleve el sabor de Brasil a su mesa durante la Copa</h2>
-      <p class="section-sub" style="margin-bottom:28px;"></p>
-
-      <div class="price-card">
-        <span class="price-complete-badge">⚡ MÁS COMPLETO</span>
-        <ul class="includes-list">
-          <li>Sabores de Brasil: 37 recetas brasileñas</li>
-          <li>Guía de Menús para Cada Partido</li>
-          <li>Guía de Compras para el Mercado</li>
-          <li>Sustituciones para LATAM</li>
-          <li>Acceso digital inmediato</li>
-          <li>Uso desde celular, tablet o computadora</li>
-        </ul>
-        <p class="price-from">US$ 27</p>
-        <div class="price-by"><span>US$</span> 7</div>
-        <a href="https://pay.hotmart.com/T106078353G?checkoutMode=10" class="btn" id="oferta-cta" style="width:100%;text-align:center;display:block;">QUIERO MI RECETARIO AHORA</a>
-      </div>
-
-      <p class="reinforce-offer">Una sola mesa especial durante la Copa ya puede hacer que este recetario valga la pena.</p>
-    </div>
-  </section>
-
-  <!-- ── GARANTIA ── -->
-  <section class="section garantia-section" id="garantia">
-    <div class="section-inner">
-      <div class="guarantee-seal">🛡️</div>
-      <h2 class="section-title">Compre con tranquilidad</h2>
-      <p>Si este recetario no le ayuda a preparar una mesa más especial para los partidos, puede solicitar su reembolso en los primeros <strong>7 días</strong> después de la compra.</p>
-      <p class="garantia-highlight">Sin preguntas. Sin complicaciones.</p>
-    </div>
-  </section>
-
   <!-- ── COMO FUNCIONA ── -->
   <section class="section como-funciona" id="como-funciona">
     <div class="section-inner">
@@ -1352,6 +1306,56 @@
       <div class="text-center">
         <a href="https://pay.hotmart.com/T106078353G?checkoutMode=10" class="btn" id="como-funciona-cta">QUIERO MI ACCESO AHORA</a>
       </div>
+    </div>
+  </section>
+
+  <!-- ── OFERTA ── -->
+  <section class="section oferta-section" id="oferta">
+    <div class="section-inner">
+      <span class="urgency-offer-badge">⏰ OFERTA ESPECIAL POR TIEMPO LIMITADO</span>
+      <h2 class="section-title">Lleve el sabor de Brasil a su mesa durante la Copa</h2>
+
+      <div class="price-card">
+        <span class="price-complete-badge">⚡ MÁS COMPLETO</span>
+        <ul class="includes-list">
+          <li>Sabores de Brasil: 37 recetas brasileñas</li>
+          <li>Guía de Menús para Cada Partido</li>
+          <li>Guía de Compras para el Mercado</li>
+          <li>Sustituciones para LATAM</li>
+          <li>Acceso digital inmediato</li>
+          <li>Uso desde celular, tablet o computadora</li>
+        </ul>
+        <p class="price-from">US$ 27</p>
+        <div class="price-by"><span>US$</span> 7</div>
+        <a href="https://pay.hotmart.com/T106078353G?checkoutMode=10" class="btn" id="oferta-cta" style="width:100%;text-align:center;display:block;">QUIERO MI RECETARIO AHORA</a>
+      </div>
+
+      <p class="reinforce-offer">Una sola mesa especial durante la Copa ya puede hacer que este recetario valga la pena.</p>
+    </div>
+  </section>
+
+  <!-- ── GARANTIA ── -->
+  <section class="section garantia-section" id="garantia">
+    <div class="section-inner">
+      <div class="guarantee-seal">🛡️</div>
+      <h2 class="section-title">Compre con tranquilidad</h2>
+      <p>Si este recetario no le ayuda a preparar una mesa más especial para los partidos, puede solicitar su reembolso en los primeros <strong>7 días</strong> después de la compra.</p>
+      <p class="garantia-highlight">Sin preguntas. Sin complicaciones.</p>
+    </div>
+  </section>
+
+  <!-- ── URGENCY BLOCK (timer + CTA) ── -->
+  <section class="section urgency-block" id="urgencia">
+    <div class="section-inner">
+      <h2 class="section-title">¿Cuántos partidos va a ver sirviendo siempre lo mismo?</h2>
+      <p class="urgency-sub">Aproveche la oferta especial por tiempo limitado y prepare una mesa brasileña para la Copa.</p>
+
+      <div class="countdown" id="countdown">
+        <div class="countdown-item"><span class="num" id="cd-mins2">20</span><span class="label">Minutos</span></div>
+        <div class="countdown-item"><span class="num" id="cd-secs2">00</span><span class="label">Segundos</span></div>
+      </div>
+
+      <a href="https://pay.hotmart.com/T106078353G?checkoutMode=10" class="btn btn-white-red" id="urgencia-cta">QUIERO ACCEDER AHORA</a>
     </div>
   </section>
 
@@ -1419,7 +1423,7 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" id="faq-8b">
+          <button class="faq-question" aria-expanded="false" id="faq-8">
             ¿Es un producto oficial de la Copa?
             <span class="faq-arrow">▾</span>
           </button>
