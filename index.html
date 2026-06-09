@@ -1315,8 +1315,8 @@
     <div class="section-inner">
       <div class="guarantee-seal">🛡️</div>
       <h2 class="section-title">Compre con tranquilidad</h2>
-      <p>Si este recetario no le ayuda a preparar una mesa más especial para los partidos, puede solicitar su reembolso dentro del plazo de garantía de la plataforma.</p>
-      <p class="garantia-highlight">Sin complicaciones.</p>
+      <p>Si este recetario no le ayuda a preparar una mesa más especial para los partidos, puede solicitar su reembolso en los primeros <strong>7 días</strong> después de la compra.</p>
+      <p class="garantia-highlight">Sin preguntas. Sin complicaciones.</p>
     </div>
   </section>
 
@@ -1410,10 +1410,18 @@
 
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false" id="faq-7">
+            ¿Por qué el precio es tan bajo?
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-answer" id="faq-7-ans">Porque es un producto digital — no tiene costos de impresión, envío ni inventario. Eso nos permite ofrecer un recetario completo a un precio accesible para cualquier persona en LATAM. El valor está en lo que usted va a preparar, no en el precio.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faq-8b">
             ¿Es un producto oficial de la Copa?
             <span class="faq-arrow">▾</span>
           </button>
-          <div class="faq-answer" id="faq-7-ans">No. Es un recetario independiente, inspirado en el clima del fútbol y la cultura brasileña. No está afiliado, patrocinado ni autorizado por ninguna organización deportiva oficial.</div>
+          <div class="faq-answer" id="faq-8-ans">No. Es un recetario independiente, inspirado en el clima del fútbol y la cultura brasileña. No está afiliado, patrocinado ni autorizado por ninguna organización deportiva oficial.</div>
         </div>
 
       </div>
@@ -1450,9 +1458,17 @@
       });
     });
 
-    // ── Shared Countdown (20 min) ──
+    // ── Shared Countdown (20 min, persiste na sessão) ──
     (function () {
-      const deadline = new Date(Date.now() + 20 * 60 * 1000);
+      const KEY = 'sdb_deadline';
+      let stored = sessionStorage.getItem(KEY);
+      let deadline;
+      if (stored) {
+        deadline = new Date(parseInt(stored, 10));
+      } else {
+        deadline = new Date(Date.now() + 20 * 60 * 1000);
+        sessionStorage.setItem(KEY, deadline.getTime());
+      }
 
       function pad(n) { return String(n).padStart(2, '0'); }
 
@@ -1481,7 +1497,7 @@
       content_name: 'Sabores de Brasil LP',
       content_category: 'Recetario Digital',
       currency: 'USD',
-      value: 9.00
+      value: 7.00
     });
 
     // ── InitiateCheckout — dispara ao clicar em qualquer CTA ──
@@ -1490,7 +1506,7 @@
         fbq('track', 'InitiateCheckout', {
           content_name: 'Sabores de Brasil',
           currency: 'USD',
-          value: 9.00,
+          value: 7.00,
           num_items: 1
         });
       });
